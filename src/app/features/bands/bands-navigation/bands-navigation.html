@@ -1,0 +1,9 @@
+<nav>
+    @for (band of navigationStore.bands(); track band.slug) {
+    <a mat-list-item
+        [routerLink]="'/' + band.slug"
+        routerLinkActive="link-active">
+        {{ band.en }}
+    </a>
+    }
+</nav>

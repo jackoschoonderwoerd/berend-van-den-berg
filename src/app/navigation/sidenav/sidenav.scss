@@ -1,0 +1,45 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: black;
+}
+
+mat-nav-list {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+mat-expansion-panel {
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    background: transparent;
+}
+
+mat-expansion-panel-header {
+    padding: 0 16px;
+}
+
+mat-panel-title {
+    font-size: 16px;
+}
+mat-panel-title:hover {
+    color: gray;
+}
+
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1rem;
+}
+
+mat-panel-title {
+    text-transform: uppercase;
+    color: white;
+}
+a[mat-list-item] {
+    text-transform: uppercase;
+    --mat-list-list-item-label-text-color: white;
+}

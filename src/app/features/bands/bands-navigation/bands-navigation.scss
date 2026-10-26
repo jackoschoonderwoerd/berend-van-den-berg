@@ -1,0 +1,40 @@
+nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: end;
+    a {
+        border: 3px solid transparent;
+        text-align: right;
+        text-transform: uppercase;
+        width: fit-content;
+        // padding: 0;
+        margin: 0;
+        font-size: 0.8rem;
+        &.link-active {
+            border-right: 3px solid green;
+        }
+    }
+    // a {
+    //     display: block;
+    //     width: 100%;
+    //     padding: 0.75rem 1rem;
+    //     box-sizing: border-box;
+
+    //     text-align: end;
+    //     text-decoration: none;
+    //     text-transform: uppercase;
+    //     line-height: 1.5;
+
+    //     color: inherit;
+    //     white-space: normal;
+
+    //     &.link-active {
+    //         border: 2px solid green;
+    //     }
+    // }
+    // .link-active {
+    //     border-left: 3px solid green;
+    //     width: fit content;
+    // }
+}

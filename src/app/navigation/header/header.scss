@@ -1,0 +1,40 @@
+:host {
+    font-family: Roboto, sans-serif;
+}
+
+mat-toolbar {
+    background: linear-gradient(to bottom, black 0%, transparent 100%);
+    position: absolute;
+    min-height: 7rem;
+    top: 0;
+    left: 0;
+    // border: 1px solid green;
+    display: flex;
+    justify-content: space-between;
+    img {
+        width: 8rem;
+    }
+    nav {
+        justify-content: right;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 0.25rem;
+        // border: 1px solid red;
+        button {
+            text-transform: uppercase;
+            font-family: Roboto, sans-serif;
+        }
+        mat-menu {
+            a {
+                text-transform: uppercase !important;
+            }
+        }
+
+        a {
+            text-transform: uppercase;
+            font-family: Roboto, sans-serif;
+        }
+    }
+}

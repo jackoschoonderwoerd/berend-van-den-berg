@@ -1,0 +1,58 @@
+<mat-toolbar>
+    <img src="/logo/berend-logo-final.webp"
+        alt="logo">
+    <!-- @if(isMobile()) {
+
+    <button (click)="navigationStore.openSidenav()"
+        mat-icon-button>
+        <mat-icon>menu</mat-icon>
+    </button>
+    } @else { -->
+    @if(!uiStore.isMobile()) {
+
+    <nav>
+
+        @for (item of navigationStore.menuItems(); track item.slug) {
+
+        @if (item.subMenuItems?.length) {
+
+        <button mat-button
+            [style]="navigationColor()"
+            [matMenuTriggerFor]="subMenu">
+            {{ item.en }}
+            <mat-icon>arrow_drop_down</mat-icon>
+        </button>
+
+        <mat-menu #subMenu="matMenu">
+
+            @for (subItem of item.subMenuItems; track subItem.slug) {
+
+            <a mat-menu-item
+                [routerLink]="['/' + subItem.slug]">
+                {{ subItem.en }}
+            </a>
+
+            }
+
+        </mat-menu>
+
+        } @else {
+        <!-- <p>Navigation color: {{ navigationColor() }}</p> -->
+        <a mat-button
+            [style]="navigationColor()"
+            [routerLink]="item.slug">
+            {{ item.en }}
+        </a>
+
+        }
+        }
+    </nav>
+    } @else {
+    <button class="menu-button"
+        (click)="navigationStore.openSidenav()"
+        mat-icon-button>
+        <mat-icon [style]="navigationColor()">menu</mat-icon>
+    </button>
+    }
+
+</mat-toolbar>

@@ -1,0 +1,22 @@
+<div class="filler"></div>
+
+<div class="gallery">
+    <div class="image-container"
+        (click)="openGallery()">
+
+        <img [src]="galleryStore.galleryImages()[0].src"
+            [alt]="galleryStore.galleryImages()[0].alt">
+
+        <div class="gallery-icon">
+            <mat-icon>photo_library</mat-icon>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- <div class="gallery">
+    <img [src]="galleryStore.galleryImages()[0].src"
+        [alt]="galleryStore.galleryImages()[0].alt"
+        (click)="openGallery()">
+</div> -->

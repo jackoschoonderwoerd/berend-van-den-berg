@@ -1,0 +1,56 @@
+<div class="wrapper">
+    <mat-nav-list>
+        @for (item of navigationStore.menuItems(); track item.slug) {
+
+        @if (item.subMenuItems?.length) {
+
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    {{ item.en }}
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+
+            @for (subItem of item.subMenuItems; track subItem.slug) {
+
+            <a mat-list-item
+                [routerLink]="['/'+ subItem.slug]"
+                (click)="onCLose()">
+                {{ subItem.en }}
+            </a>
+
+            }
+            <!-- <mat-expansion-panel-header>
+                <mat-panel-title>
+                    {{ item.en }}
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+
+            @for (subItem of item.subMenuItems; track subItem.slug) {
+            <a mat-list-item
+                [routerLink]="subItem.slug"
+                (click)="onCLose()">
+                {{ subItem.en }}
+            </a>
+            } -->
+        </mat-expansion-panel>
+
+        } @else {
+
+        <a mat-list-item
+            [routerLink]="item.slug"
+            (click)="onCLose()">
+            {{ item.en }}!!!
+        </a>
+
+        }
+        }
+    </mat-nav-list>
+
+    <div class="button-container">
+        <button mat-icon-button
+            (click)="onCLose()">
+            <mat-icon>close</mat-icon>
+        </button>
+    </div>
+</div>
